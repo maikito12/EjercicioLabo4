@@ -143,3 +143,141 @@ let miCarrito = new Carrito();
 miCarrito.agregarProducto({ nombre: "Manzana", precio: 1.2 });
 miCarrito.agregarProducto({ nombre: "Leche", precio: 0.8 });
 miCarrito.mostrarProductos();
+
+///24
+let arrayEjer24 = [2, 3 , 10, 1 , 0 , 8];
+
+function ordenarNumeros(array) {
+    return array.slice().sort((a, b) => a - b);
+}
+
+// Ejemplo de us
+let numerosOrdenados = ordenarNumeros(arrayEjer24);
+
+console.log(numerosOrdenados); // [1, 2, 3, 5, 8]
+
+///25
+let estudiante1 = new Estudiante ("Marcos", 19, 8.5);
+let estudiante2 = new Estudiante ("Inaki", 19, 8);
+
+let arregloEstudiante = [estudiante1, estudiante2];
+
+function buscarYEliminar (arreglo, dato)
+{
+    for (let i=0; i<arreglo.length; i++)
+    {
+        if (arreglo[i].nombre === dato)
+        {
+            arreglo.splice(i, 1); // Elimina el elemento en la posición 'i'
+            i--;
+        }
+    }
+
+    return arreglo;
+}
+
+let arreglo25 = buscarYEliminar (arregloEstudiante, "Marcos")
+console.log(arreglo25)
+
+///26 
+class Producto
+{
+    constructor (nombre, precio, stock)
+    {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+}
+
+let producto1 = new Producto ("Plato", 200, 10);
+let producto2 = new Producto ("Vaso", 500, 5);
+let arrayCarrito = [producto1, producto2];
+
+function sumarPrecio (arregloProducto)
+{
+    let suma=0
+    for (let i=0; i<arregloProducto.length; i++)
+    {
+        suma += arregloProducto[i].precio * arregloProducto[i].stock
+    }
+    return suma;
+}
+
+let suma26 = sumarPrecio(arrayCarrito);
+
+console.log("Precio" + suma26);
+
+///28
+class CuentaBancaria
+{
+    constructor (nombre, apellido, dni, saldo)
+    {
+        this.nombre = nombre;
+        this.apellido = apellido
+        this.dni = dni;
+        this.saldo = saldo
+    }
+
+    set setSaldo (plata)
+    {
+        this.saldo = plata;
+    } 
+
+    get getsaldo ()
+    {
+        return this.saldo;
+    } 
+
+
+    depositar (plata)
+    {
+        let saldoNuevo = this.saldo + plata;
+        this.saldo = saldoNuevo;
+    }
+
+    retirar (plata)
+    {
+
+        if (this.saldo > plata)
+        {
+            let saldoNuevo = this.saldo - plata;
+            this.saldo = saldoNuevo;
+        } else
+        {
+            console.log("error")
+        }
+        
+    }
+
+    mostrarSaldo ()
+    {
+        console.log(this.saldo) 
+    }
+}
+
+let cuenta = new CuentaBancaria ("Marcos", "La gorda closter", 19, 3);
+
+cuenta.depositar(10);
+cuenta.retirar(3)
+cuenta.mostrarSaldo();
+
+class Libro {
+    constructor (titulo, autor, paginas)
+    {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.paginas = paginas;
+    }
+
+    mostrarDetalles()
+    {
+        console.log(libro)
+    }
+}
+
+let libro = new Libro ("Harry Potter", "Marcos", 230);
+libro.mostrarDetalles();
+
+
+
