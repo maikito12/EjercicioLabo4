@@ -7,21 +7,42 @@
     <title>Block De Notas</title>
 </head>
 <body>
+   <script type="module">
+    const $=selector=>document.querySelector(selector)
+    const $$=selector=>document.querySelectorall(selector) 
+    const $borrar=$('#boton2')
+    let $CampoTexto=$('#campoTexto')
+    $borrar.addEventListener('click', BorrarTextArea)
+    
+    function BorrarTextArea(event)
+    {
+        $CampoTexto.value=''
+    }
+   </script>
     <header class="BlockNota">
         <h1>Bloc De Notas</h1>
+        
 
     </header>
-    
    <main>
+    
    <header>
-   
+    
      <div class="contenedora">
         <legend class="Notas">Notas</legend>
         <textarea cols="50" rows="30" id="campoTexto">
           
         </textarea>
-        <button  class="boton">guardar</button>
-        <button class="boton2"> borrar</button>
+        <button  class="boton" >guardar</button>
+        <button id="boton2"> borrar</button>
+        <button id="Ver">Ver notas</button>
+        <fieldset id="Check" >
+        <label for="Completado">Finalizado</label>
+        <input type="radio" name="Completado" id="Completado">
+        <label for="Pendiente">Pendiente</label>
+        <input type="radio" name="Completado" id="Pendiente">
+        </fieldset>
+        
      
         
          
@@ -32,6 +53,9 @@
    </header>
    
    </main>
+   <footer class="footer">
+    
+   </footer>
 
   
 </body>
